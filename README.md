@@ -46,6 +46,8 @@ Required libraries are used with specific/frozen versions and are continuously u
 
 ## 🛣️🚗 Vehicles counting for multiple lanes
 
+![Vehicle lane counting](/assets/images/vehicle_lane_counting.png)
+
 Vehicle counting for total cars passed from a direction and reverse using line zone, and individual counting for each road lane using polygon zones.
 
 <!-- Placeholder for image of project -->
@@ -58,3 +60,15 @@ python3 vehicle_lane_counting.py
 By default an asset video from `supervision` package is used. Multiple parameters like the video source path, polygon zones coordinates/color, etc., can be modified from the `config.yaml` file in `vehicle_lane_counting` folder.
 
 To use a custom video just paste the path in `video_path` parameter and set `is_supervision_asset` to `False`. Example provided as follows:
+```
+video_source:
+  video_path: "/path/to/folder/video.mp4"
+  is_supervision_asset: False
+```
+
+To use a connected camera real-time image feed provide the number of the connected port. For example, if camera is connected to port `0`:
+```
+video_source:
+  video_path: 0
+  is_supervision_asset: False
+```
