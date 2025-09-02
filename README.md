@@ -44,6 +44,9 @@ Required libraries are used with specific/frozen versions and are continuously u
 
 <br>
 
+### Projects Catalog
+- [Vehicle counting for multiple lanes](#️-vehicles-counting-for-multiple-lanes)
+
 ## 🛣️🚗 Vehicles counting for multiple lanes
 
 ![Vehicle lane counting](/assets/images/vehicle_lane_counting.png)
