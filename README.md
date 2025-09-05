@@ -93,7 +93,7 @@ Because license plates are not included in the COCO dataset, the model that is u
 
 ⚠️ Notice that the used model is a small and fast model architecture, just for presentation purposes. If you want to use a more accurate model, you should train it to more robust and large license plate dataset.
 
-To use a different detection model, paste the model name in `license_plate_blurring` folder or paste the absolute path in `detection_model`.
+To use a different detection model, paste the model name in `license_plate_blurring` folder or paste the absolute path in `detection_model` in `config.yaml` file.
 
 To use a custom video just paste the path in `video_source` parameter in `config.yaml`. Example provided as follows:
 ```
