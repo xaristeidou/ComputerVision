@@ -1,6 +1,6 @@
 # Computer Vision projects and examples
 
-This repository contains multiple implemented Computer Vision projects as examples and guidance.
+This repository contains a collection of Computer Vision projects, implemented for learning, guidance, and for fun.
 
 ### Dependencies
 
@@ -44,16 +44,15 @@ Required libraries are used with specific/frozen versions and are continuously u
 
 <br>
 
-### Projects Catalog
+### 🔗 Projects Catalog
 - [Vehicle counting for multiple lanes](#️-vehicles-counting-for-multiple-lanes)
 
 ## 🛣️🚗 Vehicles counting for multiple lanes
 
+
+👉 Vehicle counting for total cars passed from a direction and reverse using line zone, and individual counting for each road lane using polygon zones.
+
 ![Vehicle lane counting](/assets/images/vehicle_lane_counting.png)
-
-Vehicle counting for total cars passed from a direction and reverse using line zone, and individual counting for each road lane using polygon zones.
-
-<!-- Placeholder for image of project -->
 
 ```bash
 cd vehicle_lane_counting

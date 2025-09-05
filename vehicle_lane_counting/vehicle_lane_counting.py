@@ -9,32 +9,32 @@ from supervision.utils.file import read_yaml_file
 
 class VehicleLaneCounting():
     def __init__(self):
-        self.box_annotator = sv.BoxAnnotator(thickness=8)
+        self.box_annotator = sv.BoxAnnotator(thickness=4)
         self.byte_tracker = sv.ByteTrack()
         self.line_zone = sv.LineZone(
-            sv.Point(0, 1600),
-            sv.Point(3840, 1600),
+            sv.Point(0, 850),
+            sv.Point(1920, 850),
             triggering_anchors=[sv.Position.BOTTOM_CENTER]
         )
         self.line_zone_annotator = sv.LineZoneAnnotator(
-            thickness=8,
+            thickness=4,
             color=sv.Color.ROBOFLOW,
-            text_thickness=6,
-            text_scale=2.5,
+            text_thickness=2,
+            text_scale=1.0,
             custom_in_text="Cars in",
             custom_out_text="Cars out",
             text_offset=1,
         )
         self.label_annotator = sv.LabelAnnotator(
-            text_scale=2.0,
-            text_thickness=5,
-            border_radius=30
+            text_scale=1.0,
+            text_thickness=2,
+            border_radius=15
         )
         self._setup_cls_variables()
 
     def run(self):
         while self.cap.isOpened():
-            success, frame = self.cap.read()                
+            success, frame = self.cap.read()
 
             if success:
                 results = self.model.track(frame)[0]
@@ -89,9 +89,9 @@ class VehicleLaneCounting():
             annotator = sv.PolygonZoneAnnotator(
                 zone=zone,
                 color=color,
-                thickness=8,
-                text_scale=2.5,
-                text_thickness=6
+                thickness=4,
+                text_scale=1.5,
+                text_thickness=3
             )
             self.polygon_zones.append(zone)
             self.polygon_annotators.append(annotator)

@@ -1,34 +1,47 @@
 zones:
   - polygon:
-      - [204, 2110]
-      - [1160, 1070]
-      - [1388, 1070]
-      - [931, 2110]
+      - [110, 1064]
+      - [624, 700]
+      - [700, 700]
+      - [309, 1064]
     color: ROBOFLOW
 
   - polygon:
-      - [1020, 2110]
-      - [1430, 1070]
-      - [1686, 1070]
-      - [1709, 2110]
+      - [373, 1066]
+      - [721, 700]
+      - [800, 700]
+      - [553, 1068]
     color: RED
 
   - polygon:
-      - [2889, 2110]
-      - [2096, 1070]
-      - [2324, 1070]
-      - [3562, 2110]
+      - [615, 1071]
+      - [816, 700]
+      - [899, 700]
+      - [820, 1071]
     color: BLUE
 
   - polygon:
-      - [3623, 2110]
-      - [2378, 1070]
-      - [2575, 1070]
-      - [3821, 1818]
-      - [3817, 2110]
+      - [1067, 1058]
+      - [1005, 700]
+      - [1075, 700]
+      - [1272, 1056]
     color: GREEN
+  
+  - polygon:
+    - [1332, 1056]
+    - [1112, 700]
+    - [1185, 700]
+    - [1524, 1054]
+    color: YELLOW
 
-detection_model: "yolo11n.pt"  # Any ultralytics detection model. For example "yolov8n.pt", "yolov9m.pt", "yolo11n.pt".  | Find all available model in https://docs.ultralytics.com/models/
+  - polygon:
+    - [1584, 1048]
+    - [1226, 700]
+    - [1322, 700]
+    - [1806, 1056]
+    color: WHITE
+
+detection_model: "yolov8m.pt"  # Any ultralytics detection model. For example "yolov8n.pt", "yolov9m.pt", "yolo11n.pt".  | Find all available model in https://docs.ultralytics.com/models/
 video_source:
-  video_path: "VEHICLES"  # Path of video (mp4 or other format), or supervision asset name if 'is_supervision_asset' is set to True
+  video_path: "VEHICLES_2"  # Path of video (mp4 or other format), or supervision asset name if 'is_supervision_asset' is set to True
   is_supervision_asset: True  # Set to 'True' if you want to use a supervision asset video. For example "VEHICLES", "SUBWAY", "BASKETBALL". | Find all available asset names in https://supervision.roboflow.com/latest/assets/#supervision.assets.list.VideoAssets
