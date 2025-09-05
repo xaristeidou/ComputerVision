@@ -1,0 +1,2 @@
+detection_model: "license_plate_detector.pt"
+video_source: "/assets/videos/license_plate.mp4"
