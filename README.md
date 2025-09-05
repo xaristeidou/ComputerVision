@@ -1,6 +1,6 @@
 # Computer Vision projects and examples
 
-This repository contains multiple implemented Computer Vision projects as examples and guidance.
+This repository contains a collection of Computer Vision projects, implemented for learning, guidance, and for fun.
 
 ### Dependencies
 
@@ -44,13 +44,16 @@ Required libraries are used with specific/frozen versions and are continuously u
 
 <br>
 
+### 🔗 Projects Catalog
+- [Vehicle counting for multiple lanes](#️-vehicles-counting-for-multiple-lanes)
+- [Licence plate blurring for data privacy](#-license-plate-blurring)
+
 ## 🛣️🚗 Vehicles counting for multiple lanes
 
+
+👉 Vehicle counting for total cars passed from a direction and reverse using line zone, and individual counting for each road lane using polygon zones.
+
 ![Vehicle lane counting](/assets/images/vehicle_lane_counting.png)
-
-Vehicle counting for total cars passed from a direction and reverse using line zone, and individual counting for each road lane using polygon zones.
-
-<!-- Placeholder for image of project -->
 
 ```bash
 cd vehicle_lane_counting
@@ -71,4 +74,33 @@ To use a connected camera real-time image feed provide the number of the connect
 video_source:
   video_path: 0
   is_supervision_asset: False
+```
+
+<br>
+
+## 🚗🔲🔒 License Plate blurring
+
+👉 Detection and blur of license plate of cars. This process can be used for privacy reasons and data protection.
+
+![License Plate blurring](/assets/images/license_plate_blurring.png)
+
+```bash
+cd license_plate_blurring
+python3 license_plate_blurring.py
+```
+
+Because license plates are not included in the COCO dataset, the model that is used is trained with custom dataset. By default, YOLO model architectures are supported. If needed, change the model architecture in `license_plate_blurring.py` file.
+
+⚠️ Notice that the used model is a small and fast model architecture, just for presentation purposes. If you want to use a more accurate model, you should train it to more robust and large license plate dataset.
+
+To use a different detection model, paste the model name in `license_plate_blurring` folder or paste the absolute path in `detection_model` in `config.yaml` file.
+
+To use a custom video just paste the path in `video_source` parameter in `config.yaml`. Example provided as follows:
+```
+video_source: "/path/to/folder/video.mp4"
+```
+
+To use a connected camera real-time image feed provide the number of the connected port. For example, if camera is connected to port `0`:
+```
+video_source: 0
 ```
