@@ -47,6 +47,7 @@ Required libraries are used with specific/frozen versions and are continuously u
 ### 🔗 Projects Catalog
 - [Vehicle counting for multiple lanes](#️-vehicles-counting-for-multiple-lanes)
 - [Licence plate blurring for data privacy](#-license-plate-blurring)
+- [People fall detection for safety](#fall-detection)
 
 ## 🛣️🚗 Vehicles counting for multiple lanes
 
@@ -94,6 +95,33 @@ Because license plates are not included in the COCO dataset, the model that is u
 ⚠️ Notice that the used model is a small and fast model architecture, just for presentation purposes. If you want to use a more accurate model, you should train it to more robust and large license plate dataset.
 
 To use a different detection model, paste the model name in `license_plate_blurring` folder or paste the absolute path in `detection_model` in `config.yaml` file.
+
+To use a custom video just paste the path in `video_source` parameter in `config.yaml`. Example provided as follows:
+```
+video_source: "/path/to/folder/video.mp4"
+```
+
+To use a connected camera real-time image feed provide the number of the connected port. For example, if camera is connected to port `0`:
+```
+video_source: 0
+```
+
+<br>
+
+## 🧍🤸 Fall detection
+
+👉 Detect the human body keypoints and analyze the results of keypoints to check for possible fall. This process can be used in hospitals, nursing home, people with stability difficulties/disabilities, etc.
+
+![Fall detection](/assets/images/fall_detection.png)
+
+```bash
+cd fall_detection
+python3 fall_detection.py
+```
+
+Keypoint detection is performed and the results are further post-processed to classify a possible fall. The `sensitivity` parameter in `config.yaml` file is used for comparison of keypoints normalized values and decision making. Increasing the `sensitivity` threshold will result fall detection decision making more sensitive. ⚠️ Note that high values of `sensitivity` will result in fall detection being true when the human is still standing so you should experiment with proper value for each POV of the camera.
+
+In `config.yaml` the `detection_model` and `video_source` parameter can be modified as needed.
 
 To use a custom video just paste the path in `video_source` parameter in `config.yaml`. Example provided as follows:
 ```
