@@ -1,0 +1,3 @@
+detection_model: "yolov8s-pose.pt"
+sensitivity: 0.15
+video_source: "/assets/videos/fall1.mp4"
