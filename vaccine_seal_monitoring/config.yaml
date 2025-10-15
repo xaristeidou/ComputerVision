@@ -1,0 +1,2 @@
+detection_model: "vaccine_cap_detection.pt"
+video_source: "/assets/videos/vaccine_conveyor.mp4"

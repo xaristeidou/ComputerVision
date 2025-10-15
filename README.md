@@ -48,6 +48,7 @@ Required libraries are used with specific/frozen versions and are continuously u
 - [Vehicle counting for multiple lanes](#️-vehicles-counting-for-multiple-lanes)
 - [Licence plate blurring for data privacy](#-license-plate-blurring)
 - [People fall detection for safety](#fall-detection)
+- [Vaccine bottle seal monitoring](#-vaccine-seal-monitoring)
 
 ## 🛣️🚗 Vehicles counting for multiple lanes
 
@@ -132,3 +133,20 @@ To use a connected camera real-time image feed provide the number of the connect
 ```
 video_source: 0
 ```
+
+<br>
+
+## 💉🍶 Vaccine seal monitoring
+
+👉 Detection of vaccine bottles caps placement process. In this manufacturing process the monitoring of the cap placement can be used to ensure that any error can be monitored and safety actions can be further assigned as needed. 
+
+![Vaccine seal monitoring](/assets//images//vaccine_seal_monitoring.png)
+
+```bash
+cd vaccine_seal_monitoring
+python3 vaccine_seal_monitoring.py
+```
+
+A YOLOv8 model has been trained using a custom dataset for detection of vaccine bottles with and without caps. Two Line counters are being utilized, one that counts vaccine bottles without cap, and one that counts vaccine bottles after the placement of the cap. Also, multiple annotators are being utilized for visualization purposes.
+
+The detection model can be changed from the `config.yaml` file by changing the `detection_model` parameter. Also, the video source can be changed by modifying the path of `video_source` parameter.
